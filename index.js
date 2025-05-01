@@ -15,10 +15,10 @@ app.use(express.json({ limit: '10mb' }));
 
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 
-app.use('/api/store/', require('./src/routes/store.route'));
-app.use('/api/user/', require('./src/routes/user.route'));
-app.use('/api/item/', require('./src/routes/item.route'));
-app.use('/api/transaction/', require('./src/routes/transaction.route'));
+app.use('/api/store', require('./src/routes/store.route'));
+app.use('/api/user', require('./src/routes/user.route'));
+app.use('/api/item', require('./src/routes/item.route'));
+app.use('/api/transaction', require('./src/routes/transaction.route'));
 
 process.on('unhandledRejection', (reason, promise) => {
     console.error('Unhandled Rejection:', reason);
